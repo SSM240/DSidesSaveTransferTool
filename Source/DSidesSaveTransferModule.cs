@@ -21,7 +21,7 @@ public class DSidesSaveTransferModule : EverestModule
         Logger.SetLogLevel(nameof(DSidesSaveTransferModule), LogLevel.Verbose);
 #else
         // release builds use info logging to reduce spam in log files
-        Logger.SetLogLevel(nameof(DSidesSaveTransferToolModule), LogLevel.Info);
+        Logger.SetLogLevel(nameof(DSidesSaveTransferModule), LogLevel.Info);
 #endif
     }
 
@@ -79,7 +79,7 @@ public static class Commands
             }
             string message = $"""
             PLEASE NOTE: {warning}
-            - You should back up your save file before doing this, in case anything goes wrong unexpectedly.
+            - Make sure you've backed up your save file first, in case anything goes wrong unexpectedly.
               The current save file is `{SaveData.Instance.FileSlot}.celeste` in the Saves folder.
                 
             To proceed, use the command `transfer_dside_data confirm`.
