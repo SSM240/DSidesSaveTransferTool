@@ -1,6 +1,6 @@
 namespace Celeste.Mod.DSidesSaveTransferTool;
 
-public class DSidesSaveTransferSettings : EverestModuleSettings
-{
+//public class DSidesSaveTransferSettings : EverestModuleSettings
+//{
     
-}
+//}

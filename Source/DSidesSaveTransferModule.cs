@@ -10,8 +10,8 @@ public class DSidesSaveTransferModule : EverestModule
 {
     public static DSidesSaveTransferModule Instance { get; private set; }
 
-    public override Type SettingsType => typeof(DSidesSaveTransferSettings);
-    public static DSidesSaveTransferSettings Settings => (DSidesSaveTransferSettings) Instance._Settings;
+    //public override Type SettingsType => typeof(DSidesSaveTransferSettings);
+    //public static DSidesSaveTransferSettings Settings => (DSidesSaveTransferSettings) Instance._Settings;
 
     public DSidesSaveTransferModule()
     {
