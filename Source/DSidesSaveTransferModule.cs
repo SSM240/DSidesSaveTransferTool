@@ -122,7 +122,17 @@ public static class Commands
             Logger.Log(LogLevel.Error, nameof(DSidesSaveTransferModule), e.ToString());
             return;
         }
-        Engine.Commands.Log("Transfer successful! Return to file select to properly save the changes.", Calc.HexToColor("44ff7c"));
+        if (Engine.Scene is Overworld overworld && overworld.IsCurrent<OuiChapterSelect>())
+        {
+            Engine.Commands.Log("Transfer successful! Returning to main menu to properly save changes...", Calc.HexToColor("44ff7c"));
+            Audio.Play("event:/ui/main/button_back");
+            overworld.Goto<OuiMainMenu>();
+            overworld.Maddy.Hide();
+        }
+        else
+        {
+            Engine.Commands.Log("Transfer successful! Return to file select to properly save the changes.", Calc.HexToColor("44ff7c"));
+        }
     }
 
     public static AreaStats CloneWithID(this AreaStats stats, int id)
