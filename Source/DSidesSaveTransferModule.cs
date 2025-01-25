@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Monocle;
@@ -100,6 +101,7 @@ public static class Commands
             monikaLevelSetStats.Areas = newAreas;
             monikaLevelSetStats.UnlockedAreas = nameGuyLevelSetStats.UnlockedAreas;
             monikaLevelSetStats.TotalStrawberries = nameGuyLevelSetStats.TotalStrawberries;
+            monikaLevelSetStats.Poem = nameGuyLevelSetStats.Poem.Select(s => s.Replace("nameguys", "monika")).ToList();
 
             List<AreaStats> newAreasMuseum = new();
             foreach (AreaStats area in nameGuyMuseumLevelSetStats.Areas)
@@ -112,6 +114,7 @@ public static class Commands
             monikaMuseumLevelSetStats.Areas = newAreasMuseum;
             monikaMuseumLevelSetStats.UnlockedAreas = nameGuyMuseumLevelSetStats.UnlockedAreas;
             monikaMuseumLevelSetStats.TotalStrawberries = nameGuyMuseumLevelSetStats.TotalStrawberries;
+            monikaMuseumLevelSetStats.Poem = nameGuyMuseumLevelSetStats.Poem.Select(s => s.Replace("nameguys", "monika")).ToList();
         }
         catch (Exception e)
         {
